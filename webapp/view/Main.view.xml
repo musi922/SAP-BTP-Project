@@ -1,5 +1,6 @@
-<mvc:View
+<mvc:View xmlns:f="sap.f" xmlns:launchpad="sap.ushell.ui.launchpad"
 	controllerName="sapbtpproject.controller.Main"
+	xmlns:custom="sapbtpproject.control"
 	displayBlock="true"
 	xmlns="sap.m"
 	xmlns:mvc="sap.ui.core.mvc"
@@ -7,24 +8,48 @@
 	core:require="{
 		formatter: 'sapbtpproject/model/formatter'
 	}">
+ <Page class="mainPage">
+ <headerContent >
+ <Bar design="Header">
+ <contentLeft >
+<Image src="https://www.sap.com/dam/application/shared/logos/sap-logo-svg.svg" width="60px" height="2rem" />
+ <Text id="productsPage" text="Products"/>
+ <Text id="supportPage" text="Support"/>
+ <Text id="learningPage" text="Learning"/>
+ <Text id="communityPage" text="Community"/>
+ <Text id="othersPage" text="Partners"/>
+ <Text id="aboutPage" text="About"/>
+ </contentLeft>
+ <contentRight>
+ <Text text="Explore SAP"/>
+ <Button icon="sap-icon://search"/>
+ <Button icon="sap-icon://person-placeholder"/>
+ <Button icon="sap-icon://world"/>
+ </contentRight>
+ </Bar>
+  </headerContent>
+ <subHeader >
+ <Toolbar class="subHeaderToolbar">
+ <ToolbarSpacer />
+ <Text text="Visit our local site for more information and offerings for your country."/>
+ <ToolbarSpacer />
+ <Button icon="sap-icon://world" text="SAP Rwanda" type="Emphasized"/>
+ <Button  text="Stay on the Africa Site" />
+ <Button icon="sap-icon://decline"/>
+ </Toolbar>
+ </subHeader>
+ <content>
+ <HBox class="mainSection">
+ <VBox class="subsection">
+ <Text text="Nothing can stop your business" class="title"></Text>
+ <Text text="With SAP,AI agents, data, and process work as one-so you can bring out your best even when the world brings you its worst" class="text"></Text>
+<custom:MyCustomButton text="Learn more" class="myButton" />
+</VBox>
+ </HBox>
 
-	<Page
-		title="{i18n>appTitle}"
-		id="page">
-		<content>
-			<IllustratedMessage
-				title="{i18n>appTitle}"
-				illustrationType="sapIllus-SuccessHighFive"
-				enableVerticalResponsiveness="true"
-				description="{i18n>appDescription}">
-				<additionalContent>
-					<Button
-						id="helloButton"
-						text="{formatter: 'formatter.formatValue', path: 'i18n>btnText'}"
-						press="sayHello" />
-				</additionalContent>
-			</IllustratedMessage>
-		</content>
-	</Page>
+
+ </content>
+
+ </Page>
 
 </mvc:View>
