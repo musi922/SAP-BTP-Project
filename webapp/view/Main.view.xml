@@ -1,4 +1,4 @@
-<mvc:View xmlns:launchpad="sap.ushell.ui.launchpad"
+<mvc:View xmlns:f="sap.f" xmlns:launchpad="sap.ushell.ui.launchpad"
 	controllerName="sapbtpproject.controller.Main"
 	displayBlock="true"
 	xmlns="sap.m"
@@ -7,18 +7,17 @@
 	core:require="{
 		formatter: 'sapbtpproject/model/formatter'
 	}">
-
- <Page id="mainPage" >
- <headerContent>
- <Bar >
- <contentLeft>
+ <Page class="mainPage">
+ <headerContent >
+ <Bar design="Header">
+ <contentLeft >
 <Image src="https://www.sap.com/dam/application/shared/logos/sap-logo-svg.svg" width="60px" height="2rem" />
- <Link id="productsPage" text="Products"></Link>
- <Link id="supportPage" text="Support"></Link>
- <Link id="learningPage" text="Learning"></Link>
- <Link id="communityPage" text="Community"></Link>
- <Link id="othersPage" text="Partners"></Link>
- <Link id="aboutPage" text="About"></Link>
+ <Text id="productsPage" text="Products"/>
+ <Text id="supportPage" text="Support"/>
+ <Text id="learningPage" text="Learning"/>
+ <Text id="communityPage" text="Community"/>
+ <Text id="othersPage" text="Partners"/>
+ <Text id="aboutPage" text="About"/>
  </contentLeft>
  <contentRight>
  <Text text="Explore SAP"/>
@@ -27,7 +26,21 @@
  <Button icon="sap-icon://world"/>
  </contentRight>
  </Bar>
- </headerContent>
+  </headerContent>
+ <subHeader >
+ <Toolbar class="subHeaderToolbar">
+ <ToolbarSpacer />
+ <Text text="Visit our local site for more information and offerings for your country."/>
+ <ToolbarSpacer />
+ <Button icon="sap-icon://world" text="SAP Rwanda" type="Emphasized"/>
+ <Button  text="Stay on the Africa Site" />
+ <Button icon="sap-icon://decline"/>
+ </Toolbar>
+ </subHeader>
+ <content>
+
+ </content>
+
  </Page>
 
 </mvc:View>
